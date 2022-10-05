@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./create.css";
 
 export default function Create() {
   const [name, setName] = useState("");
-  const [support, setSupport] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [price, setPrice] = useState("");
   const [photo, setPhoto] = useState("");
-
+  const [support, setSupport] = useState([]);
+  const [newSupport, setNewSupport] = useState("");
+  const supportInput = useRef(null);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, time, price, support, date);
+  };
+
+  const handleSupport = (e) => {
+    e.preventDefault();
+    const sup = newSupport.trim();
+
+    if (sup && !support.includes(sup)) {
+      setSupport((prevSupport) => [...prevSupport, sup]);
+    }
+    setNewSupport("");
+    supportInput.current.focus();
   };
 
   return (
@@ -50,13 +62,24 @@ export default function Create() {
 
         <label>
           <span>Support</span>
-          <input
-            type="text"
-            onChange={(e) => setSupport(e.target.value)}
-            value={support}
-            required
-          />
+          <div className="additional-bands">
+            <input
+              type="text"
+              onChange={(e) => setNewSupport(e.target.value)}
+              value={newSupport}
+              ref={supportInput}
+            />
+            <button onClick={handleSupport} className="btn">
+              add
+            </button>
+          </div>
         </label>
+        <p>
+          Supporting Acts:{" "}
+          {support.map((band) => (
+            <em key={band}>{band}, </em>
+          ))}
+        </p>
 
         <label>
           <span>Show Price:</span>
