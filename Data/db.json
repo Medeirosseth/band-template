@@ -1,0 +1,40 @@
+{
+  "shows": [
+    {
+      "id": "1",
+      "name": "Genesis",
+      "support": ["Michael Buble", "Thin Lizzy"],
+      "date": "10/1/2022",
+      "time": "8:00",
+      "price": "$10",
+      "photo": "string"
+    },
+    {
+      "id": "2",
+      "name": "Frank Ocean",
+      "support": ["Kanye", "Common"],
+      "date": "10/2/2022",
+      "time": "8:00",
+      "price": "$10",
+      "photo": "string"
+    },
+    {
+      "id": "3",
+      "name": "Ditto",
+      "support": ["Enya", "Ramstien"],
+      "date": "10/3/2022",
+      "time": "8:00",
+      "price": "$10",
+      "photo": "string"
+    },
+    {
+      "id": "4",
+      "name": "One Direction",
+      "support": ["Bob", "Cotton Eyed Joe"],
+      "date": "10/4/2022",
+      "time": "8:00",
+      "price": "$10",
+      "photo": "string"
+    }
+  ]
+}
