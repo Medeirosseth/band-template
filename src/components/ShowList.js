@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import "./showList.scss";
 
 export default function ShowList({ shows }) {
+  if (shows.length === 0) {
+    return <div>No shows found matching that criteria</div>;
+  }
+
   return (
     <div className="show-list">
       {shows.map((show) => (

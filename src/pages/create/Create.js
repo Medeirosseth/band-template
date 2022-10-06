@@ -1,4 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetch";
+
 import "./create.css";
 
 export default function Create() {
@@ -10,9 +13,16 @@ export default function Create() {
   const [support, setSupport] = useState([]);
   const [newSupport, setNewSupport] = useState("");
   const supportInput = useRef(null);
+  const history = useHistory();
+
+  const { postData, data, error } = useFetch(
+    "http://localhost:3000/shows",
+    "POST"
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, time, price, support, date);
+    postData({ name, date, time, price, photo, support });
   };
 
   const handleSupport = (e) => {
@@ -25,6 +35,13 @@ export default function Create() {
     setNewSupport("");
     supportInput.current.focus();
   };
+
+  //redirect the user
+  useEffect(() => {
+    if (data) {
+      history.push("/");
+    }
+  }, [data]);
 
   return (
     <div className="create">
