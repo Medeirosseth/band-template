@@ -1,12 +1,32 @@
 import { useParams } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
+import { useEffect, useState } from "react";
+import { projectFirestore } from "../../firebase/config";
 
 import "./show.scss";
 
 export default function Shows() {
+  const [show, setShow] = useState(null);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(null);
   const { id } = useParams();
-  const url = " http://localhost:3000/shows/" + id;
-  const { error, isPending, data: show } = useFetch(url);
+
+  useEffect(() => {
+    setIsPending(true);
+
+    projectFirestore
+      .collection("shows")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setIsPending(false);
+          setShow(doc.data());
+        } else {
+          setIsPending(false);
+          setError("Could not find that show");
+        }
+      });
+  }, [id]);
 
   return (
     <div className="show">

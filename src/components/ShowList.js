@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import "./showList.scss";
+import { projectFirestore } from "../firebase/config";
 
 export default function ShowList({ shows }) {
   if (shows.length === 0) {
     return <div>No shows found matching that criteria</div>;
   }
 
+  const handleDelete = (id) => {
+    projectFirestore.collection("shows").doc(id).delete();
+  };
   return (
     <div className="show-list">
       {shows.map((show) => (
@@ -26,6 +30,9 @@ export default function ShowList({ shows }) {
                 {show.time},{show.price}
               </div>
               <Link to={`/show/${show.id}`}>Show</Link>
+              <span onClick={() => handleDelete(show.id)} className="delete">
+                X
+              </span>
             </div>
           </div>
         </div>

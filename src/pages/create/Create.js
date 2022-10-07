@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
+import { projectFirestore } from "../../firebase/config";
 
 import "./create.css";
 
@@ -15,14 +15,16 @@ export default function Create() {
   const supportInput = useRef(null);
   const history = useHistory();
 
-  const { postData, data, error } = useFetch(
-    "http://localhost:3000/shows",
-    "POST"
-  );
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postData({ name, date, time, price, photo, support });
+    const doc = { name, date, time, price, photo, support };
+
+    try {
+      await projectFirestore.collection("shows").add(doc);
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleSupport = (e) => {
@@ -35,13 +37,6 @@ export default function Create() {
     setNewSupport("");
     supportInput.current.focus();
   };
-
-  //redirect the user
-  useEffect(() => {
-    if (data) {
-      history.push("/");
-    }
-  }, [data]);
 
   return (
     <div className="create">
