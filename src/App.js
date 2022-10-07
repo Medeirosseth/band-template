@@ -4,7 +4,9 @@ import Home from "./pages/home/Home";
 import Create from "./pages/create/Create";
 import Show from "./pages/show/Show";
 import NavBar from "./components/NavBar";
-
+import Menu from "./pages/menu/Menu";
+import Contact from "./pages/contact/Contact";
+//styles
 import "./App.css";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
+      <Menu />
+      <Contact />
     </div>
   );
 }

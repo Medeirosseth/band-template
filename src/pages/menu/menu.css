@@ -1,0 +1,17 @@
+.menu-item {
+  font-family: "Noto Serif Telugu", serif;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 40px solid black; */
+}
+
+.disclaimer {
+  font-size: 20px;
+}
+
+span {
+  margin-top: 20px;
+}

@@ -1,0 +1,11 @@
+.newShowForm {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  align-items: center;
+
+  div label {
+    display: flex;
+    background-color: chocolate;
+  }
+}
