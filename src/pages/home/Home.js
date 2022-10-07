@@ -14,10 +14,8 @@ export default function Home() {
   useEffect(() => {
     setIsPending(true);
 
-    projectFirestore
-      .collection("shows")
-      .get()
-      .then((snapshot) => {
+    const unsubscribe = projectFirestore.collection("shows").onSnapshot(
+      (snapshot) => {
         if (snapshot.empty) {
           setError("no shows to load");
           setIsPending(false);
@@ -29,11 +27,14 @@ export default function Home() {
           setData(results);
           setIsPending(false);
         }
-      })
-      .catch((err) => {
+      },
+      (err) => {
         setError(err.message);
         setIsPending(false);
-      });
+      }
+    );
+
+    return () => unsubscribe();
   }, []);
 
   return (

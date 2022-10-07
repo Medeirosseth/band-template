@@ -13,11 +13,10 @@ export default function Shows() {
   useEffect(() => {
     setIsPending(true);
 
-    projectFirestore
+    const unsubscribe = projectFirestore
       .collection("shows")
       .doc(id)
-      .get()
-      .then((doc) => {
+      .onSnapshot((doc) => {
         if (doc.exists) {
           setIsPending(false);
           setShow(doc.data());
@@ -26,7 +25,14 @@ export default function Shows() {
           setError("Could not find that show");
         }
       });
+
+    return () => unsubscribe();
   }, [id]);
+
+  // FLUSH PUT UPDATE IDEA
+  // const handleEdit = (id) => {
+  //   projectFirestore.collection("shows").doc(id).update({});
+  // };
 
   return (
     <div className="show">
@@ -65,6 +71,7 @@ export default function Shows() {
                 <p>showID: </p>
                 <p>{show.id}</p>
               </div>
+              {/*<button onClick={handleEdit}>Edit</button>*/}
             </div>
           </div>
         </>
