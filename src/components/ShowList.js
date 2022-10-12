@@ -10,6 +10,7 @@ export default function ShowList({ shows }) {
   const handleDelete = (id) => {
     projectFirestore.collection("shows").doc(id).delete();
   };
+
   return (
     <div className="show-list">
       {shows.map((show) => (

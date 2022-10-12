@@ -1,5 +1,5 @@
 import "./contact.css";
-
+import { Link, Router, BrowserRouter } from "react-router-dom";
 export default function Contact() {
   return (
     <>
@@ -19,6 +19,9 @@ export default function Contact() {
             request and we do our best to give each one the attention they
             deserve.
           </p>
+          <BrowserRouter>
+            <Link to="/create">Add Show</Link>
+          </BrowserRouter>
         </div>
       </div>
     </>

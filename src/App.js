@@ -17,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+            <Menu />
           </Route>
           <Route path="/create">
             <Create />
@@ -29,7 +30,6 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-      <Menu />
       <Contact />
     </div>
   );

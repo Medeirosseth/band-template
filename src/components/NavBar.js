@@ -8,7 +8,6 @@ export default function NavBar() {
           <h1 className="kenton-club"> Kenton Club</h1>
           <img alt="tagline" className="tagline" src="../MBR.png" />
         </Link>
-        <Link to="/create">Add Show</Link>
       </nav>
     </div>
   );
