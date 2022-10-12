@@ -1,14 +1,13 @@
 import "./navBar.css";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
 export default function NavBar() {
   return (
     <div className="navbar">
       <nav>
         <Link to="/" className="brand">
-          <h1> Kenton Club</h1>
+          <h1 className="kenton-club"> Kenton Club</h1>
+          <img alt="tagline" className="tagline" src="../MBR.png" />
         </Link>
-        <SearchBar />
         <Link to="/create">Add Show</Link>
       </nav>
     </div>

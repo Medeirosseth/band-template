@@ -9,7 +9,7 @@ export default function Create() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [price, setPrice] = useState("");
-  const [photo, setPhoto] = useState("");
+  const [photo, setPhoto] = useState(null);
   const [support, setSupport] = useState([]);
   const [newSupport, setNewSupport] = useState("");
   const supportInput = useRef(null);
@@ -40,56 +40,29 @@ export default function Create() {
 
   return (
     <div className="create">
-      <h2 className="addBand">Add Band</h2>
       <form className="newShowForm" onSubmit={handleSubmit}>
         <div className="bandNameLabel">
-          <label>
-            <span>Band Name</span>
-            <input
-              type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              required
-            />
-          </label>
-        </div>
-        <div className="dateLable">
-          <label>
-            <span>Date</span>
-            <input
-              type="text"
-              onChange={(e) => setDate(e.target.value)}
-              value={date}
-              required
-            />
-          </label>
-        </div>
-        <div className="timeLabel">
-          <label>
-            <span>Time</span>
-            <input
-              type="text"
-              onChange={(e) => setTime(e.target.value)}
-              value={time}
-              required
-            />
-          </label>
+          <input
+            type="text"
+            placeholder="Group"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            required
+          />
         </div>
         <div className="supportLabel">
-          <label>
-            <span>Support</span>
-            <div className="additional-bands">
-              <input
-                type="text"
-                onChange={(e) => setNewSupport(e.target.value)}
-                value={newSupport}
-                ref={supportInput}
-              />
-              <button onClick={handleSupport} className="btn">
-                add
-              </button>
-            </div>
-          </label>
+          <div className="additional-bands">
+            <input
+              type="text"
+              placeholder="Supporting Acts"
+              onChange={(e) => setNewSupport(e.target.value)}
+              value={newSupport}
+              ref={supportInput}
+            />
+            <button onClick={handleSupport} className="btn">
+              add
+            </button>
+          </div>
         </div>
         <div className="supportingActs">
           <p>
@@ -99,28 +72,43 @@ export default function Create() {
             ))}
           </p>
         </div>
+        <div className="dateLable">
+          <input
+            placeholder="Date"
+            type="text"
+            onChange={(e) => setDate(e.target.value)}
+            value={date}
+            required
+          />
+        </div>
+        <div className="timeLabel">
+          <input
+            placeholder="Time"
+            type="text"
+            onChange={(e) => setTime(e.target.value)}
+            value={time}
+            required
+          />
+        </div>
         <div className="priceLabel">
-          <label>
-            <span>Show Price:</span>
-            <input
-              type="text"
-              onChange={(e) => setPrice(e.target.value)}
-              value={price}
-              required
-            />
-          </label>
+          <input
+            placeholder="Price"
+            type="text"
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}
+            required
+          />
         </div>
         <div className="photoLabel">
-          <label>
-            <span>Photo:</span>
-            <input
-              type="text"
-              onChange={(e) => setPhoto(e.target.value)}
-              value={photo}
-              required
-            />
-          </label>
+          <input
+            placeholder="photo"
+            type="file"
+            onChange={(e) => setPhoto(e.target.value)}
+            value={photo}
+            required
+          />
         </div>
+
         <button type="submit">submit</button>
       </form>
     </div>

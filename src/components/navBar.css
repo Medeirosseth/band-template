@@ -1,7 +1,20 @@
 .navbar {
-  background: #58249c;
-  padding: 20px;
+  background: #000000;
   color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.kenton-club {
+  font-family: "Fredoka One", cursive;
+  font-size: 50px;
+  float: left;
+}
+
+.tagline {
+  width: 60%;
+  float: right;
 }
 .navbar nav {
   display: flex;

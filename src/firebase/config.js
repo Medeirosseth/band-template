@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
+// import { getStorage } from "/firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAmZOhRvhDa3FHpOVL4-r_IPcny7SCUPng",
@@ -15,5 +16,7 @@ firebase.initializeApp(firebaseConfig);
 
 //init services
 const projectFirestore = firebase.firestore();
+//storage for images
+// const storage = getStorage();
 
 export { projectFirestore };
