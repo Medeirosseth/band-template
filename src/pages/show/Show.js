@@ -45,7 +45,7 @@ export default function Shows() {
               <h2>{show.date}</h2>
               <h4>The World Famous Kenton Club Presents:</h4>
               <h1>{show.name}</h1>
-              <h3>{show.support}</h3>
+              <h3 className="supportName">{show.support}</h3>
               <span>{show.photo}</span>
               <h4>
                 {show.time} // {show.price}

@@ -25,17 +25,16 @@ function App() {
             <Home />
             <Menu />
           </Route>
-          <Route path="/search">
-            <Search />
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="/show/:id">
             <Show />
           </Route>
         </Switch>
       </BrowserRouter>
-      <Login />
       <Contact />
-      {authIsReady && <Create />}
+      {!authIsReady && <Create />}
     </div>
   );
 }

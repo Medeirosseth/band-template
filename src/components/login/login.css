@@ -1,0 +1,18 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 300px;
+  margin-bottom: 67px;
+}
+
+input {
+  height: 30px;
+}
+
+button {
+  margin-top: 7px;
+  height: 30px;
+  border-radius: 7px;
+}

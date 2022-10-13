@@ -25,7 +25,11 @@ export default function ShowList({ shows }) {
               </h4>
               <h1 className="showCardName"> {show.name} </h1>
               <p>and</p>
-              <h2 className="showCardSupport"> {show.support}</h2>
+              {/* <h2 className="showCardSupport"> {show.support}</h2> */}
+              <h2 className="showCardSupport"> {show.support[0]}</h2>
+              <h2 className="showCardSupport"> {show.support[1]}</h2>
+              <h2 className="showCardSupport"> {show.support[2]}</h2>
+              <h2 className="showCardSupport"> {show.support[3]}</h2>
               <div className="showPhoto">{show.photo}</div>
               <div className="showCardDateTime">
                 {show.time},{show.price}

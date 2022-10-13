@@ -1,45 +1,57 @@
 .navbar {
-  background: #000000;
-  color: #fff;
-  position: fixed;
+  background: rgb(247, 249, 105);
+  color: rgb(7, 47, 225);
+  opacity: 95%;
+  height: 200px;
   top: 0;
+  position: fixed;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
+  /* justify-self: stretch; */
+}
+nav {
+  justify-self: center;
+  padding: 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
+.middle {
+  margin-top: -50px;
+}
+.bottom {
+  margin-top: -40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .kenton-club {
   font-family: "Fredoka One", cursive;
   font-size: 50px;
-  float: left;
-  color: white;
+  color: rgb(195, 0, 0);
 }
 
-.tagline {
-  width: 60%;
+.lottery {
+  align-self: start;
   float: right;
 }
-.navbar nav {
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+
+.emptyDiv {
+  width: 40px;
 }
-/* .navbar a.brand {
-  margin-right: auto;
-  color: #fff;
-  text-decoration: none;
-} */
-
-/*add show css */
-
-/* .navbar a:last-child {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 40px;
-  padding: 8px;
-  border: 1px solid #fff;
-  border-radius: 4px;
-} */
-/* .navbar a:last-child:hover {
-  background: #fff;
-  color: #333;
-} */
+.lotto {
+  width: 40px;
+  float: right;
+}
+.fa-star {
+  color: red;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}

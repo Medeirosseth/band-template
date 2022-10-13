@@ -15,6 +15,13 @@ export default function Contact() {
             2025 N Kilpatrick St Portland, OR 97217
           </span>
           <p className="hours"> Current Hours noon to midnight</p>
+          <p>
+            <BrowserRouter>
+              <Link to="/login">
+                <i class="fa-solid fa-bolt"></i>
+              </Link>
+            </BrowserRouter>
+          </p>
         </div>
         <div className="contact-right">
           <span className="booking">Booking: wfkcbooking@gmail.com</span>
@@ -25,6 +32,7 @@ export default function Contact() {
             request and we do our best to give each one the attention they
             deserve.
           </p>
+
           {!user && <></>}
           {user && (
             <>
@@ -32,9 +40,6 @@ export default function Contact() {
               <button className="btn" onClick={logout}>
                 Logout
               </button>
-              <BrowserRouter>
-                <Link to="/create">Add Show</Link>
-              </BrowserRouter>
             </>
           )}
         </div>

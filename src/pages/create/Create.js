@@ -70,11 +70,13 @@ export default function Create() {
           <p>
             Supporting Acts:{" "}
             {support.map((band) => (
-              <em key={band}>{band}, </em>
+              <span className="supportName">
+                <em key={band}>{band}</em>.{" "}
+              </span>
             ))}
           </p>
         </div>
-        <div className="dateLable">
+        <div className="dateLabel">
           <input
             placeholder="Date"
             type="text"
