@@ -8,6 +8,7 @@ import Menu from "./pages/menu/Menu";
 import Contact from "./pages/contact/Contact";
 //styles
 import "./App.css";
+import SignIn from "./components/signin/SignIn";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
+      <SignIn />
       <Contact />
     </div>
   );
