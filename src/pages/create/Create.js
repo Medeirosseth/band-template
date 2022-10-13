@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { projectFirestore } from "../../firebase/config";
+import { useLogout } from "../../hooks/useLogout";
 
 import "./create.scss";
 
@@ -13,7 +14,8 @@ export default function Create() {
   const [support, setSupport] = useState([]);
   const [newSupport, setNewSupport] = useState("");
   const supportInput = useRef(null);
-  const history = useHistory();
+  const { logout } = useLogout();
+  // const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ export default function Create() {
 
     try {
       await projectFirestore.collection("shows").add(doc);
-      history.push("/");
+      // history.push("/");
     } catch (err) {
       console.log(err);
     }
@@ -111,6 +113,9 @@ export default function Create() {
 
         <button type="submit">submit</button>
       </form>
+      <button className="btn" onClick={logout}>
+        Logout
+      </button>
     </div>
   );
 }
