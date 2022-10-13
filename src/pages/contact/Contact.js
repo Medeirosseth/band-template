@@ -1,6 +1,12 @@
 import "./contact.css";
 import { Link, Router, BrowserRouter } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useLogout } from "../../hooks/useLogout";
+
 export default function Contact() {
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+
   return (
     <>
       <div className="contact-container">
@@ -19,9 +25,18 @@ export default function Contact() {
             request and we do our best to give each one the attention they
             deserve.
           </p>
-          <BrowserRouter>
-            <Link to="/create">Add Show</Link>
-          </BrowserRouter>
+          {!user && <></>}
+          {user && (
+            <>
+              {user.displayName}
+              <button className="btn" onClick={logout}>
+                Logout
+              </button>
+              <BrowserRouter>
+                <Link to="/create">Add Show</Link>
+              </BrowserRouter>
+            </>
+          )}
         </div>
       </div>
     </>

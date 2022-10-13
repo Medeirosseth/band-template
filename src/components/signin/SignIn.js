@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useSignup } from "../../hooks/useSignup";
+import { useLogout } from "../../hooks/useLogout";
+import { useLogin } from "../../hooks/useLogin";
+
 import "./signIn.css";
 
 export default function SignIn() {
@@ -7,6 +10,8 @@ export default function SignIn() {
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const { signup, isPending, error } = useSignup();
+  const { logout } = useLogout();
+  const { login } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +53,12 @@ export default function SignIn() {
             </button>
           )}
           {error && <p>{error}</p>}
+          <button className="btn" onClick={logout}>
+            Logout
+          </button>
+          <button className="btn" onClick={login}>
+            Login
+          </button>
         </div>
       </form>
     </div>

@@ -6,9 +6,11 @@ import Show from "./pages/show/Show";
 import NavBar from "./components/NavBar";
 import Menu from "./pages/menu/Menu";
 import Contact from "./pages/contact/Contact";
+
 //styles
 import "./App.css";
 import SignIn from "./components/signin/SignIn";
+import Login from "./components/login/login";
 
 function App() {
   return (
@@ -31,7 +33,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-      <SignIn />
+      <Login />
       <Contact />
     </div>
   );
