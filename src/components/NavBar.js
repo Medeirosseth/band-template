@@ -12,9 +12,9 @@ export default function NavBar() {
         </div>
         <div className="bottom">
           <h2> DINING </h2>
-          <i class="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
           <h2>DANCING</h2>
-          <i class="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
           <h2>LOUNGE</h2>
         </div>
       </nav>

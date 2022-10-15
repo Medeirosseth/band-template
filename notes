@@ -1,2 +1,22 @@
 --- trouble shoot logging out and triggering AUTH IS READY in order to remove form
 ---upload images firestore
+
+
+
+Return firebase storage rules to =
+1
+rules_version = '2';
+2
+service firebase.storage {
+3
+  match /b/{bucket}/o {
+4
+    match /{allPaths=**} {
+5
+      allow read, write: if false;
+6
+    }
+7
+  }
+8
+}

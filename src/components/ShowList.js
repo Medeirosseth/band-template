@@ -18,7 +18,12 @@ export default function ShowList({ shows }) {
         <div key={show.id}>
           <div className="show">
             <div className="showCard">
-              <h3 className="showCardDate"> {show.date} </h3>
+              <h3 className="showCardDate">
+                {" "}
+                {show.date[5]}
+                {show.date[6]}/{show.date[8]}
+                {show.date[9]}
+              </h3>
               <h4 className="showCardPresents">
                 {" "}
                 The World Famous Kenton Club Presents:{" "}
@@ -30,7 +35,9 @@ export default function ShowList({ shows }) {
               <h2 className="showCardSupport"> {show.support[1]}</h2>
               <h2 className="showCardSupport"> {show.support[2]}</h2>
               <h2 className="showCardSupport"> {show.support[3]}</h2>
-              <div className="showPhoto">{show.photo}</div>
+              <div className="showPhoto">
+                <img alt="Headliner" src={show.photo} />
+              </div>
               <div className="showCardDateTime">
                 {show.time},{show.price}
               </div>

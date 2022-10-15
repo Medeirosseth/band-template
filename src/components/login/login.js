@@ -1,5 +1,6 @@
 import { useLogin } from "../../hooks/useLogin";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 export default function Login() {
@@ -31,7 +32,11 @@ export default function Login() {
           value={password}
         />
       </label>
-      {!isPending && <button className="btn">Login</button>}
+      {!isPending && (
+        <Link to="/">
+          <button className="btn">Login</button>
+        </Link>
+      )}
       {isPending && (
         <button className="btn" disabled>
           loading

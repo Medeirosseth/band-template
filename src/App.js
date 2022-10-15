@@ -34,7 +34,7 @@ function App() {
         </Switch>
       </BrowserRouter>
       <Contact />
-      {!authIsReady && <Create />}
+      {authIsReady && <Create />}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import "./menu.css";
 
 export default function Menu() {
   return (
-    <div class="container">
+    <div className="container">
       <div className="menu-wrapper">
         <div className="menu-item">
           <h2>Menu</h2>

@@ -18,7 +18,7 @@ export default function Contact() {
           <p>
             <BrowserRouter>
               <Link to="/login">
-                <i class="fa-solid fa-bolt"></i>
+                <i className="fa-solid fa-bolt"></i>
               </Link>
             </BrowserRouter>
           </p>

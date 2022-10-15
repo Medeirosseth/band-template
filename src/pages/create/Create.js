@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { projectFirestore } from "../../firebase/config";
+import { projectFirestore, app } from "../../firebase/config";
 import { useLogout } from "../../hooks/useLogout";
-
 import "./create.scss";
 
 export default function Create() {
@@ -38,6 +37,15 @@ export default function Create() {
     }
     setNewSupport("");
     supportInput.current.focus();
+  };
+
+  const onFileChange = async (e) => {
+    const file = e.target.files[0];
+    const storageRef = app.storage().ref();
+    console.log("AAAAA", storageRef);
+    const fileRef = storageRef.child(file.name);
+    await fileRef.put(file);
+    setPhoto(await fileRef.getDownloadURL());
   };
 
   return (
@@ -79,7 +87,7 @@ export default function Create() {
         <div className="dateLabel">
           <input
             placeholder="Date"
-            type="text"
+            type="date"
             onChange={(e) => setDate(e.target.value)}
             value={date}
             required
@@ -88,7 +96,7 @@ export default function Create() {
         <div className="timeLabel">
           <input
             placeholder="Time"
-            type="text"
+            type="time"
             onChange={(e) => setTime(e.target.value)}
             value={time}
             required
@@ -107,8 +115,7 @@ export default function Create() {
           <input
             placeholder="photo"
             type="file"
-            onChange={(e) => setPhoto(e.target.value)}
-            value={photo}
+            onChange={onFileChange}
             required
           />
         </div>
