@@ -26,6 +26,7 @@ export default function Create() {
     } catch (err) {
       console.log(err);
     }
+    // document.getElementById("newShow-form").reset();
   };
 
   const handleSupport = (e) => {
@@ -50,7 +51,7 @@ export default function Create() {
 
   return (
     <div className="create">
-      <form className="newShowForm" onSubmit={handleSubmit}>
+      <form id="newShow-form" className="newShowForm" onSubmit={handleSubmit}>
         <div className="bandNameLabel">
           <input
             type="text"

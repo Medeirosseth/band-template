@@ -1,4 +1,5 @@
 import "./navBar.css";
+import Home from "../pages/home/Home";
 export default function NavBar() {
   return (
     <div className="navbar">

@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Menu from "./pages/menu/Menu";
 import Contact from "./pages/contact/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
+import ShowList from "./components/ShowList";
 
 //styles
 import "./App.css";

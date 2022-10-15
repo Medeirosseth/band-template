@@ -7,13 +7,21 @@ export default function ShowList({ shows }) {
     return <div>No shows found matching that criteria</div>;
   }
 
+  const sortShows = (shows) => {
+    let sortedArray = shows.sort(function (a, b) {
+      return new Date(a.date) - new Date(b.date);
+    });
+    console.log("sorted show????", sortedArray);
+    return sortedArray;
+  };
+
   const handleDelete = (id) => {
     projectFirestore.collection("shows").doc(id).delete();
   };
 
   return (
     <div className="show-list">
-      {shows.map((show) => (
+      {sortShows(shows).map((show) => (
         // <h2 key={show.id}>{show.name}</h2>
         <div key={show.id}>
           <div className="show">
