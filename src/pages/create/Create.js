@@ -40,10 +40,22 @@ export default function Create() {
     supportInput.current.focus();
   };
 
+  const handleRemoveSupport = (e) => {
+    e.preventDefault();
+
+    const last = support[support.length - 1];
+    const deleteSup = support.pop();
+    console.log("AAAA", support.pop());
+
+    if (support.length >= 0) {
+      setSupport(support.pop());
+      console.log(support);
+    }
+  };
+
   const onFileChange = async (e) => {
     const file = e.target.files[0];
     const storageRef = app.storage().ref();
-    console.log("AAAAA", storageRef);
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setPhoto(await fileRef.getDownloadURL());
@@ -73,6 +85,9 @@ export default function Create() {
             <button onClick={handleSupport} className="btn">
               add
             </button>
+            <button onClick={handleRemoveSupport} className="btn">
+              remove
+            </button>
           </div>
         </div>
         <div className="supportingActs">
@@ -80,7 +95,7 @@ export default function Create() {
             Supporting Acts:{" "}
             {support.map((band) => (
               <span className="supportName">
-                <em key={band}>{band}</em>.{" "}
+                <em key={band.id}>{band}</em>.{" "}
               </span>
             ))}
           </p>

@@ -1,4 +1,4 @@
-.navbar {
+.topbar {
   background: yellow;
   color: rgb(7, 47, 225);
   opacity: 95%;
@@ -19,6 +19,10 @@ nav {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .middle {

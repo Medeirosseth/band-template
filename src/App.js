@@ -1,9 +1,9 @@
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Search from "./pages/search/Search";
 import Home from "./pages/home/Home";
 import Create from "./pages/create/Create";
 import Show from "./pages/show/Show";
-import NavBar from "./components/NavBar";
+import TopBar from "./components/TopBar";
 import Menu from "./pages/menu/Menu";
 import Contact from "./pages/contact/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
@@ -20,20 +20,23 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-            <Menu />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/show/:id">
-            <Show />
-          </Route>
-        </Switch>
+        <TopBar />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Home />
+                <Menu />
+              </>
+            }
+          ></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/show/:id" element={<Show />}></Route>
+        </Routes>
       </BrowserRouter>
+
       <Contact />
       {authIsReady && <Create />}
     </div>

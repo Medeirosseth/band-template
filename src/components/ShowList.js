@@ -11,7 +11,6 @@ export default function ShowList({ shows }) {
     let sortedArray = shows.sort(function (a, b) {
       return new Date(a.date) - new Date(b.date);
     });
-    console.log("sorted show????", sortedArray);
     return sortedArray;
   };
 
