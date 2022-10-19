@@ -14,6 +14,15 @@ export default function ShowList({ shows }) {
     return sortedArray;
   };
 
+  const showTime = (shows) => {
+    const ST = shows.time;
+    const AMorPM = shows.time >= 12 ? "pm" : "am";
+    const hours = shows.time % 12 || 12;
+    const minutes = ST.getMinutes();
+    const showTime = hours + ":" + minutes + " " + AMorPM;
+    return showTime;
+  };
+
   const handleDelete = (id) => {
     projectFirestore.collection("shows").doc(id).delete();
   };
@@ -46,12 +55,16 @@ export default function ShowList({ shows }) {
                 <img alt="Headliner" src={show.photo} />
               </div>
               <div className="showCardDateTime">
-                {show.time},{show.price}
+                {shows.time},{show.price}
               </div>
-              <Link to={`/show/${show.id}`}>Show</Link>
-              <span onClick={() => handleDelete(show.id)} className="delete">
-                X
-              </span>
+              <div className="manage-show-details">
+                <Link className="details" to={`/show/${show.id}`}>
+                  Info
+                </Link>
+                <span onClick={() => handleDelete(show.id)} className="delete">
+                  Delete
+                </span>
+              </div>
             </div>
           </div>
         </div>

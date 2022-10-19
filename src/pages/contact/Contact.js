@@ -1,9 +1,8 @@
 import "./contact.css";
-import { Link, Router, BrowserRouter, withRouter } from "react-router-dom";
-import Login from "../../components/login/login";
+import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useLogout } from "../../hooks/useLogout";
-
+import Login from "../../components/login/login";
 export default function Contact() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
@@ -17,11 +16,9 @@ export default function Contact() {
           </span>
           <p className="hours"> Current Hours noon to midnight</p>
           <p>
-            <BrowserRouter>
-              <Link to="/login">
-                <i className="fa-solid fa-bolt"></i>
-              </Link>
-            </BrowserRouter>
+            <Link to="/login">
+              <i className="fa-solid fa-bolt"></i>
+            </Link>
           </p>
         </div>
         <div className="contact-right">

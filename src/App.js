@@ -29,15 +29,15 @@ function App() {
               <>
                 <Home />
                 <Menu />
+                <Contact />
               </>
             }
           ></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/show/:id" element={<Show />}></Route>
+          <Route path="/" element={<Show />}></Route>
         </Routes>
       </BrowserRouter>
-
-      <Contact />
       {authIsReady && <Create />}
     </div>
   );
