@@ -55,7 +55,7 @@ export default function ShowList({ shows }) {
                 <img alt="Headliner" src={show.photo} />
               </div>
               <div className="showCardDateTime">
-                {shows.time},{show.price}
+                {show.time},{show.price}
               </div>
               <div className="manage-show-details">
                 <Link className="details" to={`/show/${show.id}`}>
