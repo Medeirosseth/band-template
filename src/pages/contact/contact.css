@@ -12,12 +12,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: rgb(247, 249, 105);
-  color: rgb(191, 48, 48);
-}
-
-.location {
-  font-size: 20px;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .contact-right {
@@ -27,24 +23,42 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(247, 249, 105);
-  color: rgb(191, 48, 48);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 12px;
 }
 
-.booking {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background-color: rgb(247, 249, 105);
-  color: black;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.contact-input {
+  width: 100%;
+  margin-bottom: 5px;
   border-radius: 10px;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+}
+
+.contact-area {
+  width: 190%;
+  height: 125px;
+  border-radius: 10px;
+}
+
+.mbr {
+  margin-top: -20px;
 }
 
 .fa-bolt {
   color: rgb(198, 63, 63);
+}
+
+@media (max-width: 400px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }

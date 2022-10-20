@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  border: 10px solid rgb(242, 255, 96);
+  // border: 10px solid rgb(242, 255, 96);
   border-radius: 25px;
   // margin-top: -30px;
   .manage-show-details {
@@ -78,6 +78,84 @@
       img {
         height: 200px;
         border-radius: 15px;
+      }
+    }
+  }
+}
+
+// @media (min-width: 1040px) {
+//   .show-list {
+//     background-color: grey;
+//     .show {
+//       background-color: inherit;
+//       div {
+//       }
+//       .showCard {
+//         // background-color: blue;
+//         width: 60%;
+//         .showInfo {
+//           // background-color: black;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: space-around;
+//           align-self: end;
+//           margin-right: 25px;
+//           margin-bottom: -100px;
+//         }
+//         .showPhoto {
+//           height: 40%;
+//           width: auto;
+//           border: solid 1px yellow;
+//           align-self: start;
+//           justify-self: center;
+//           margin-top: -50px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media (min-width: 1040px) {
+  .show-list {
+    background-color: orange;
+    div {
+      .show {
+        .showCard {
+          background-color: black;
+          .cardTop {
+            .showCardDate {
+              background-color: inherit;
+            }
+            .showCardPresents {
+              background-color: inherit;
+            }
+          }
+          .cardMiddle {
+            .showInfo {
+              .showInfoLeft {
+                .showPhoto {
+                  background-color: inherit;
+                }
+              }
+              .showInfoRight {
+                .showCardName {
+                  background-color: inherit;
+                }
+                .showCardSupport {
+                  background-color: inherit;
+                }
+              }
+            }
+          }
+          .cardBottom {
+            .showCardDateTime {
+              background-color: inherit;
+            }
+          }
+          .manage-show-details {
+            background-color: inherit;
+          }
+        }
       }
     }
   }

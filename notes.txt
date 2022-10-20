@@ -1,6 +1,4 @@
 --- trouble shoot logging out and triggering AUTH IS READY in order to remove form
----upload images firestore
-
 
 
 Return firebase storage rules to =

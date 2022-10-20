@@ -1,6 +1,6 @@
 .topbar {
-  background: rgb(255, 255, 255);
-  color: rgb(7, 47, 225);
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   opacity: 95%;
   height: 200px;
   top: 0;
@@ -28,8 +28,22 @@ nav {
 .middle {
   margin-top: -50px;
 }
+
+.location {
+  color: white;
+  margin-top: -20px;
+}
+
+.hours {
+  color: white;
+  margin-top: -20px;
+}
+.top {
+  color: white;
+}
 .bottom {
   margin-top: -40px;
+  color: white;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -37,7 +51,7 @@ nav {
 .kenton-club {
   font-family: "Fredoka One", cursive;
   font-size: 50px;
-  color: rgb(195, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .lottery {
@@ -53,7 +67,7 @@ nav {
   float: right;
 }
 .fa-star {
-  color: red;
+  color: rgb(188, 56, 56);
   padding-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;

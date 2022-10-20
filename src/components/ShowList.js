@@ -14,6 +14,7 @@ export default function ShowList({ shows }) {
     return sortedArray;
   };
 
+  ////figure this out
   const showTime = (shows) => {
     const ST = shows.time;
     const AMorPM = shows.time >= 12 ? "pm" : "am";
@@ -34,28 +35,40 @@ export default function ShowList({ shows }) {
         <div key={show.id}>
           <div className="show">
             <div className="showCard">
-              <h3 className="showCardDate">
-                {" "}
-                {show.date[5]}
-                {show.date[6]}/{show.date[8]}
-                {show.date[9]}
-              </h3>
-              <h4 className="showCardPresents">
-                {" "}
-                The World Famous Kenton Club Presents:{" "}
-              </h4>
-              <h1 className="showCardName"> {show.name} </h1>
-              <p>and</p>
-              {/* <h2 className="showCardSupport"> {show.support}</h2> */}
-              <h2 className="showCardSupport"> {show.support[0]}</h2>
-              <h2 className="showCardSupport"> {show.support[1]}</h2>
-              <h2 className="showCardSupport"> {show.support[2]}</h2>
-              <h2 className="showCardSupport"> {show.support[3]}</h2>
-              <div className="showPhoto">
-                <img alt="Headliner" src={show.photo} />
+              <div className="cardTop">
+                <h3 className="showCardDate">
+                  {" "}
+                  {show.date[5]}
+                  {show.date[6]}/{show.date[8]}
+                  {show.date[9]}
+                </h3>
+                <h4 className="showCardPresents">
+                  {" "}
+                  The World Famous Kenton Club Presents{" "}
+                </h4>
               </div>
-              <div className="showCardDateTime">
-                {show.time},{show.price}
+              <div className="cardMiddle">
+                <div className="showInfo">
+                  <div className="showInfoLeft">
+                    <div className="showPhoto">
+                      <img alt="Headliner" src={show.photo} />
+                    </div>
+                  </div>
+                  <div className="showInfoRight">
+                    <h1 className="showCardName"> {show.name} </h1>
+                    <p></p>
+                    {/* <h2 className="showCardSupport"> {show.support}</h2> */}
+                    <h2 className="showCardSupport"> {show.support[0]}</h2>
+                    <h2 className="showCardSupport"> {show.support[1]}</h2>
+                    <h2 className="showCardSupport"> {show.support[2]}</h2>
+                    <h2 className="showCardSupport"> {show.support[3]}</h2>
+                  </div>
+                </div>
+              </div>
+              <div className="cardBottom">
+                <div className="showCardDateTime">
+                  {show.time},{show.price}
+                </div>
               </div>
               <div className="manage-show-details">
                 <Link className="details" to={`/show/${show.id}`}>

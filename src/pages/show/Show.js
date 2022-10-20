@@ -103,15 +103,15 @@ export default function Shows() {
           </div>
         </>
       )}
-
       <form id="newShow-form" className="newShowForm" onSubmit={handleUpdate}>
         <div className="bandNameLabel">
           <input
             type="text"
             placeholder="Group"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) =>
+              !null ? setName(e.target.value) : setShow({ ...show.name })
+            }
             value={name}
-            required
           />
         </div>
         <div className="supportLabel">
