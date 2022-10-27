@@ -118,11 +118,22 @@
 @media (min-width: 1040px) {
   .show-list {
     background-color: orange;
+    background-image: repeating-conic-gradient(black 10%, white 20%);
     div {
       .show {
+        background-color: inherit;
         .showCard {
-          background-color: black;
+          margin-top: -100px;
+          border:solid 1px white;
+          width:60%;
+          height: auto;
+          background-color: grey;
           .cardTop {
+            // background-color: black;
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin:5px;
             .showCardDate {
               background-color: inherit;
             }
@@ -131,13 +142,44 @@
             }
           }
           .cardMiddle {
+            border-top:200px;
+            width: 100%;
             .showInfo {
+              width: 100%;
+              display: flex;
+
+              // border: solid 1px red;
               .showInfoLeft {
+                display: flex;
+                justify-content: center;
+                align-items: end;
+                flex:.5;
+                // border: solid 1px lightblue;
                 .showPhoto {
+                  // display: flex;
+                  // justify-content: center;
+                  // align-items: center;
+                  // width: 45%;
+                  height: 100%;
+                  // border: solid 1px orange;
                   background-color: inherit;
+                  img {
+                    // margin-top:300px;
+                    margin: auto;
+                    display:block;
+                    // margin-bottom: -250px;
+                    height: 100%;
+                    width: 80%;
+                  }
                 }
               }
               .showInfoRight {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                // width:50%;
+                flex:.5;
+                // border: solid 1px green;
                 .showCardName {
                   background-color: inherit;
                 }
