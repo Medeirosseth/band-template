@@ -52,7 +52,6 @@ export default function Contact() {
           <textarea name="message" />
           <input type="submit" value="Send" />
         </form>
-        <span className="booking">Booking: wfkcbooking@gmail.com</span>
 
         {!user && <></>}
         {user && (

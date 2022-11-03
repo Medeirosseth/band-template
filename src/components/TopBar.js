@@ -28,13 +28,7 @@ export default function TopBar() {
           <h6 className="location"> 2025 N Kilpatrick St Portland, OR 97217</h6>
           <h6 className="hours">Current Hours noon to midnight</h6>
         </nav>
-        <div className="lottery">
-          <img
-            alt="oregon lottery"
-            className="lotto"
-            src="./oregonLottery.png"
-          />
-        </div>
+        <div className="lottery"></div>
       </div>
     </>
   );
