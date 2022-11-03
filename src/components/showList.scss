@@ -199,8 +199,8 @@
         background-color: inherit;
         .showCard {
           margin-top: -100px;
-          border:solid 1px white;
-          width:60%;
+          border: solid 1px white;
+          width: 60%;
           height: auto;
           background-color: grey;
           .cardTop {
@@ -208,7 +208,7 @@
             width: 100%;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
-            margin:5px;
+            margin: 5px;
             .showCardDate {
               background-color: inherit;
             }
@@ -217,7 +217,7 @@
             }
           }
           .cardMiddle {
-            border-top:200px;
+            border-top: 200px;
             width: 100%;
             .showInfo {
               width: 100%;
@@ -228,7 +228,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: end;
-                flex:.5;
+                flex: 0.5;
                 // border: solid 1px lightblue;
                 .showPhoto {
                   // display: flex;
@@ -241,7 +241,7 @@
                   img {
                     // margin-top:300px;
                     margin: auto;
-                    display:block;
+                    display: block;
                     // margin-bottom: -250px;
                     height: 90%;
                     width: 90%;
@@ -253,7 +253,7 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 // width:50%;
-                flex:.5;
+                flex: 0.5;
                 // border: solid 1px green;
                 .showCardName {
                   background-color: inherit;

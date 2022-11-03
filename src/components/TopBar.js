@@ -15,19 +15,18 @@ export default function TopBar() {
             <div className="middle">
               <h1 className="kenton-club"> Kenton Club</h1>
             </div>
-            <div className="bottom">
-              <h2> DINING </h2>
-              <i className="fa-solid fa-star"></i>
-              <h2>DANCING</h2>
-              <i className="fa-solid fa-star"></i>
-              <h2>LOUNGE</h2>
-            </div>
-            <h6 className="location">
-              {" "}
-              2025 N Kilpatrick St Portland, OR 97217
-            </h6>
-            <h6 className="hours">Current Hours noon to midnight</h6>
           </Link>
+          <div className="bottom">
+            <a href="#menu">
+              <h2> DINING </h2>
+            </a>
+            <i className="fa-solid fa-star"></i>
+            <h2>DANCING</h2>
+            <i className="fa-solid fa-star"></i>
+            <h2>LOUNGE</h2>
+          </div>
+          <h6 className="location"> 2025 N Kilpatrick St Portland, OR 97217</h6>
+          <h6 className="hours">Current Hours noon to midnight</h6>
         </nav>
         <div className="lottery">
           <img
