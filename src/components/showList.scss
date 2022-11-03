@@ -83,10 +83,9 @@
 //   }
 // }
 
-
 //new style for mobile
 .show-list {
-  background-color: orange;
+  background-color: blue;
   div {
     .show {
       display: flex;
@@ -106,7 +105,8 @@
         flex-direction: column;
         align-items: center;
         margin-top: -60px;
-        background-color: grey;
+        border: solid 1px white;
+        background-color: black;
         box-shadow: 20px 20px 10px rgb(0, 0, 0);
         margin-bottom: 0px;
         color: white;
@@ -118,6 +118,7 @@
           .showCardDate {
             font-size: x-large;
             background-color: inherit;
+            margin-bottom: -20px;
           }
           .showCardPresents {
             background-color: inherit;
@@ -130,6 +131,7 @@
                 img {
                   height: 200px;
                   border-radius: 15px;
+                  margin-bottom: -20px;
                 }
               }
             }
@@ -138,11 +140,14 @@
                 font-family: "Fredoka One", cursive;
                 font-size: 40px;
                 background-color: inherit;
+                margin-bottom: -10px;
               }
               .showCardSupport {
                 font-family: "Fredoka One", cursive;
                 // background-color: red;
                 margin-top: -5px;
+                margin-bottom: 5px;
+
                 display: flex;
                 flex-direction: column;
                 height: auto;
@@ -155,14 +160,14 @@
           .showCardDateTime {
             // border: solid 1px red;
             background-color: inherit;
-            margin-top: -20px;
           }
         }
         .manage-show-details {
           background-color: inherit;
-          display:flex;
-          
-          .details{
+          display: flex;
+          margin-bottom: 10px;
+
+          .details {
             display: flex;
             justify-content: space-between;
             text-decoration: none;
@@ -172,7 +177,7 @@
             color: white;
             border-radius: 8px;
           }
-          .delete{
+          .delete {
             margin-left: 10px;
             text-decoration: none;
             margin-top: 10px;
@@ -187,22 +192,21 @@
   }
 }
 
-
-
 //style for browser
 @media (min-width: 1040px) {
   .show-list {
-    background-color: orange;
+    background-color: white;
     // background-image: repeating-conic-gradient(black 10%, white 20%);
     div {
       .show {
         background-color: inherit;
         .showCard {
           margin-top: -100px;
-          border: solid 1px white;
+          // border: solid 1px orange;
           width: 60%;
           height: auto;
-          background-color: grey;
+          background-color: black;
+
           .cardTop {
             // background-color: black;
             width: 100%;
@@ -222,7 +226,7 @@
             .showInfo {
               width: 100%;
               display: flex;
-              
+
               // border: solid 1px red;
               .showInfoLeft {
                 display: flex;

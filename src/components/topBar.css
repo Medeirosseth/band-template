@@ -1,6 +1,6 @@
 .topbar {
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  background: white;
+  color: rgb(11, 100, 245);
   opacity: 95%;
   height: 200px;
   top: 0;
@@ -11,6 +11,8 @@
   justify-content: space-between;
   flex-direction: row;
   text-align: center;
+  border: 6px solid rgb(11, 100, 245);
+  border-radius: 5px;
   /* justify-self: stretch; */
 }
 nav {
@@ -23,7 +25,7 @@ nav {
 
 a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(11, 100, 245);
 }
 .link {
   text-decoration: none;
@@ -34,20 +36,20 @@ a {
 }
 
 .location {
-  color: white;
+  color: rgb(11, 100, 245);
   margin-top: -20px;
 }
 
 .hours {
-  color: white;
+  color: rgb(11, 100, 245);
   margin-top: -20px;
 }
 .top {
-  color: white;
+  color: rgb(11, 100, 245);
 }
 .bottom {
   margin-top: -40px;
-  color: white;
+  color: rgb(11, 100, 245);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -55,7 +57,8 @@ a {
 .kenton-club {
   font-family: "Fredoka One", cursive;
   font-size: 50px;
-  color: rgb(255, 255, 255);
+  /* color: rgb(240, 37, 37); */
+  color: rgb(188, 56, 56);
 }
 
 .lottery {

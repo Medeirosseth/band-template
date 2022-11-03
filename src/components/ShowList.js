@@ -16,15 +16,31 @@ export default function ShowList({ shows }) {
     return sortedArray;
   };
 
+  console.log(shows);
   ////figure this out
-  const showTime = (shows) => {
-    const ST = shows.time;
-    const AMorPM = shows.time >= 12 ? "pm" : "am";
-    const hours = shows.time % 12 || 12;
-    const minutes = ST.getMinutes();
-    const showTime = hours + ":" + minutes + " " + AMorPM;
-    return showTime;
+  const showTime = (sT) => {
+    const myArray = sT.split("");
+    let hourString = myArray[0] + myArray[1];
+    let hour = parseInt(hourString);
+    let amOrPm = hour >= 12 ? "pm" : "am";
+    let modulo = hour % 12 || 12;
+    let prettyShowTime = modulo + myArray[2] + myArray[3] + myArray[4] + amOrPm;
+
+    return prettyShowTime;
   };
+  // const showTime = (shows) => {
+  //   const ST = shows.time;
+  //   console.log("show Time:  ", ST);
+  //   const AMorPM = shows.time >= 12 ? "pm" : "am";
+  //   console.log("am or pm: ", AMorPM);
+  //   const hours = shows.time % 12 || 12;
+  //   console.log("hours: ", hours);
+  //   const minutes = ST.getMinutes();
+  //   console.log("minutes: ", minutes);
+  //   const showTime = hours + ":" + minutes + " " + AMorPM;
+  //   console.log("show time: ", showTime);
+  //   return showTime;
+  // };
 
   const handleDelete = (id) => {
     projectFirestore.collection("shows").doc(id).delete();
@@ -62,15 +78,15 @@ export default function ShowList({ shows }) {
                       <p></p>
                       {/* <h2 className="showCardSupport"> {show.support}</h2> */}
                       <h2 className="showCardSupport"> {show.support[0]}</h2>
-                      <h2 className="showCardSupport"> {show.support[1]}</h2>
-                      <h2 className="showCardSupport"> {show.support[2]}</h2>
-                      <h2 className="showCardSupport"> {show.support[3]}</h2>
+                      <h3 className="showCardSupport"> {show.support[1]}</h3>
+                      <h4 className="showCardSupport"> {show.support[2]}</h4>
+                      <h4 className="showCardSupport"> {show.support[3]}</h4>
                     </div>
                   </div>
                 </div>
                 <div className="cardBottom">
                   <div className="showCardDateTime">
-                    {show.time},{show.price}
+                    🚪: {showTime(show.time)}, {show.price}
                   </div>
                 </div>
                 <div className="manage-show-details">
@@ -93,7 +109,7 @@ export default function ShowList({ shows }) {
     );
   } else {
     let firstThreeShows = sortShows(shows).slice(0, 3);
-    console.log("AAAAAA", firstThreeShows);
+
     return (
       <div className="show-list">
         {firstThreeShows.map((show) => (
@@ -133,7 +149,7 @@ export default function ShowList({ shows }) {
                 </div>
                 <div className="cardBottom">
                   <div className="showCardDateTime">
-                    {show.time},{show.price}
+                    🚪{showTime(show.time)}: , {show.price}$
                   </div>
                 </div>
                 <div className="manage-show-details">
