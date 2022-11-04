@@ -9,6 +9,13 @@ export default function ShowList({ shows }) {
     return <div>No shows found matching that criteria</div>;
   }
 
+  // function clearShows() {
+  //   console.log("ourint");
+  // }
+  // const interval = setInterval(clearShows, 3000);
+
+  // console.log("interval", interval);
+
   const sortShows = (shows) => {
     let sortedArray = shows.sort(function (a, b) {
       return new Date(a.date) - new Date(b.date);
@@ -35,9 +42,9 @@ export default function ShowList({ shows }) {
     if (prettyDate < currentDate) {
       handleDelete(id);
     } else if (prettyDate >= currentDate) {
-      console.log("still to come");
+      // console.log("still to come");
     } else {
-      console.log("nothing happened");
+      // console.log("nothing happened");
     }
   }
 
