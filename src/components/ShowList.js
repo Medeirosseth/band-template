@@ -16,7 +16,6 @@ export default function ShowList({ shows }) {
     return sortedArray;
   };
 
-  console.log(shows);
   ////figure this out
   const showTime = (sT) => {
     const myArray = sT.split("");
@@ -28,19 +27,28 @@ export default function ShowList({ shows }) {
 
     return prettyShowTime;
   };
-  // const showTime = (shows) => {
-  //   const ST = shows.time;
-  //   console.log("show Time:  ", ST);
-  //   const AMorPM = shows.time >= 12 ? "pm" : "am";
-  //   console.log("am or pm: ", AMorPM);
-  //   const hours = shows.time % 12 || 12;
-  //   console.log("hours: ", hours);
-  //   const minutes = ST.getMinutes();
-  //   console.log("minutes: ", minutes);
-  //   const showTime = hours + ":" + minutes + " " + AMorPM;
-  //   console.log("show time: ", showTime);
-  //   return showTime;
-  // };
+
+  const deleteOldShows = (ourShowDate) => {
+    // gets current date
+    const currentDate = new Date();
+    if (ourShowDate <= currentDate) {
+      console.log("alreadyHappened");
+    } else if (ourShowDate > currentDate) {
+      console.log("still to come");
+    } else {
+      // console.log("nothing happened");
+    }
+    const currentDayOfMonth = currentDate.getDate();
+    const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+    const currentYear = currentDate.getFullYear();
+    const dateString =
+      currentMonth + 1 + "-" + currentDayOfMonth + "-" + currentYear;
+
+    console.log("ours", ourShowDate);
+    console.log(dateString);
+
+    //gets current show date
+  };
 
   const handleDelete = (id) => {
     projectFirestore.collection("shows").doc(id).delete();
@@ -54,6 +62,11 @@ export default function ShowList({ shows }) {
           <div key={show.id}>
             <div className="show">
               <div className="showCard">
+                <i
+                  onClick={() => handleDelete(show.id)}
+                  className="fa-solid fa-xmark"
+                ></i>
+
                 <div className="cardTop">
                   <h3 className="showCardDate">
                     {" "}
@@ -93,12 +106,6 @@ export default function ShowList({ shows }) {
                   <Link className="details" to={`/show/${show.id}`}>
                     Info
                   </Link>
-                  <span
-                    onClick={() => handleDelete(show.id)}
-                    className="delete"
-                  >
-                    Delete
-                  </span>
                 </div>
               </div>
             </div>
@@ -109,7 +116,6 @@ export default function ShowList({ shows }) {
     );
   } else {
     let firstThreeShows = sortShows(shows).slice(0, 3);
-
     return (
       <div className="show-list">
         {firstThreeShows.map((show) => (
@@ -117,6 +123,13 @@ export default function ShowList({ shows }) {
           <div key={show.id}>
             <div className="show">
               <div className="showCard">
+                <button className="daddy" onClick={deleteOldShows(show.date)}>
+                  CLICK ME DADDY
+                </button>
+                <i
+                  onClick={() => handleDelete(show.id)}
+                  className="fa-solid fa-xmark"
+                ></i>
                 <div className="cardTop">
                   <h3 className="showCardDate">
                     {" "}
@@ -149,7 +162,7 @@ export default function ShowList({ shows }) {
                 </div>
                 <div className="cardBottom">
                   <div className="showCardDateTime">
-                    🚪{showTime(show.time)}: , {show.price}$
+                    🚪{showTime(show.time)}: , {show.price}${" "}
                   </div>
                 </div>
                 <div className="manage-show-details">
