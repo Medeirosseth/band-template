@@ -13,16 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     setIsPending(true);
-    const currentDate = new Date();
 
-    const currentDayOfMonth = currentDate.getDate();
-    const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
-    const currentYear = currentDate.getFullYear();
-
-    const dateString =
-      currentMonth + 1 + "-" + currentDayOfMonth + "-" + currentYear;
-
-    console.log("BBBBBB", dateString);
     const unsubscribe = projectFirestore.collection("shows").onSnapshot(
       (snapshot) => {
         if (snapshot.empty) {

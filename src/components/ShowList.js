@@ -16,7 +16,7 @@ export default function ShowList({ shows }) {
     return sortedArray;
   };
 
-  ////figure this out
+  // refactored show time
   const showTime = (sT) => {
     const myArray = sT.split("");
     let hourString = myArray[0] + myArray[1];
@@ -28,27 +28,18 @@ export default function ShowList({ shows }) {
     return prettyShowTime;
   };
 
-  const deleteOldShows = (ourShowDate) => {
-    // gets current date
+  function deleteOldShows(ourShowDate, id) {
     const currentDate = new Date();
-    if (ourShowDate <= currentDate) {
-      console.log("alreadyHappened");
-    } else if (ourShowDate > currentDate) {
+    const prettyDate = new Date(ourShowDate + " 23:59:59.999");
+
+    if (prettyDate < currentDate) {
+      handleDelete(id);
+    } else if (prettyDate >= currentDate) {
       console.log("still to come");
     } else {
-      // console.log("nothing happened");
+      console.log("nothing happened");
     }
-    const currentDayOfMonth = currentDate.getDate();
-    const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
-    const currentYear = currentDate.getFullYear();
-    const dateString =
-      currentMonth + 1 + "-" + currentDayOfMonth + "-" + currentYear;
-
-    console.log("ours", ourShowDate);
-    console.log(dateString);
-
-    //gets current show date
-  };
+  }
 
   const handleDelete = (id) => {
     projectFirestore.collection("shows").doc(id).delete();
@@ -123,7 +114,10 @@ export default function ShowList({ shows }) {
           <div key={show.id}>
             <div className="show">
               <div className="showCard">
-                <button className="daddy" onClick={deleteOldShows(show.date)}>
+                <button
+                  className="daddy"
+                  onClick={deleteOldShows(show.date, show.id)}
+                >
                   CLICK ME DADDY
                 </button>
                 <i
