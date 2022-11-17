@@ -9,6 +9,7 @@ export const useLogout = () => {
   const { dispatch } = useAuthContext();
 
   const logout = async () => {
+    console.log("Clicked");
     setError(null);
     setIsPending(true);
 

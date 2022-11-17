@@ -31,12 +31,15 @@
         margin-bottom: -90px;
         color: white;
         border-radius: 10px;
-        .fa-xmark {
+        .deleteIconContainer {
           align-self: flex-end;
           margin-top: 10px;
           margin-right: 10px;
           margin-bottom: -10px;
-          font-size: larger;
+          .fa-xmark {
+            font-size: larger;
+            cursor: pointer;
+          }
         }
         .cardTop {
           width: 100%;

@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import "./showList.scss";
 import { projectFirestore } from "../firebase/config";
 import { useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
+import Create from "../pages/create/Create";
 
 export default function ShowList({ shows }) {
+  const { user } = useAuthContext();
   const [allShows, setAllShows] = useState(false);
   if (shows.length === 0) {
     return <div>No shows found matching that criteria</div>;
@@ -53,6 +56,7 @@ export default function ShowList({ shows }) {
   };
 
   if (allShows === true) {
+    console.log("USER LOGIN: ", user);
     return (
       <div className="show-list">
         {sortShows(shows).map((show) => (
@@ -60,10 +64,12 @@ export default function ShowList({ shows }) {
           <div key={show.id}>
             <div className="show">
               <div className="showCard">
-                <i
-                  onClick={() => handleDelete(show.id)}
-                  className="fa-solid fa-xmark"
-                ></i>
+                {!user && (
+                  <i
+                    onClick={() => handleDelete(show.id)}
+                    className="fa-solid fa-xmark"
+                  ></i>
+                )}
 
                 <div className="cardTop">
                   <h3 className="showCardDate">
@@ -127,10 +133,14 @@ export default function ShowList({ shows }) {
                 >
                   CLICK ME DADDY
                 </button>
-                <i
-                  onClick={() => handleDelete(show.id)}
-                  className="fa-solid fa-xmark"
-                ></i>
+                {user && (
+                  <div
+                    className="deleteIconContainer"
+                    onClick={() => handleDelete(show.id)}
+                  >
+                    <i className="fa-solid fa-xmark"></i>
+                  </div>
+                )}
                 <div className="cardTop">
                   <h3 className="showCardDate">
                     {" "}
@@ -170,18 +180,15 @@ export default function ShowList({ shows }) {
                   <Link className="details" to={`/show/${show.id}`}>
                     Info
                   </Link>
-                  <span
-                    onClick={() => handleDelete(show.id)}
-                    className="delete"
-                  >
-                    Delete
-                  </span>
                 </div>
               </div>
             </div>
           </div>
         ))}
-        <button onClick={() => setAllShows(true)}>See MOre</button>
+        <div className="seeMoreBtn">
+          <button onClick={() => setAllShows(true)}>See MOre</button>
+        </div>
+        {user && <Create />}
       </div>
     );
   }

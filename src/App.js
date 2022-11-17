@@ -6,14 +6,15 @@ import TopBar from "./components/TopBar";
 import Menu from "./pages/menu/Menu";
 import Contact from "./pages/contact/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
+// import Signin from "./components/Signin";
+import Login from "./components/login/login";
 
 //styles
 import "./App.css";
-import Login from "./components/login/login";
 
 function App() {
   // insert user in useAuthContext()
-  const { authIsReady } = useAuthContext();
+  // const { authIsReady } = useAuthContext();
 
   return (
     <div className="App">
@@ -36,7 +37,6 @@ function App() {
           <Route path="/" element={<Show />}></Route>
         </Routes>
       </BrowserRouter>
-      {authIsReady && <Create />}
     </div>
   );
 }

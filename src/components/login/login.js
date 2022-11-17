@@ -10,7 +10,9 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("clicked");
     login(email, password);
+    console.log("email: ", email, "CLICKED");
   };
 
   return (
@@ -34,7 +36,9 @@ export default function Login() {
       </label>
       {!isPending && (
         <Link to="/">
-          <button className="btn">Login</button>
+          <button onClick={handleSubmit} className="btn">
+            Login
+          </button>
         </Link>
       )}
       {isPending && (
