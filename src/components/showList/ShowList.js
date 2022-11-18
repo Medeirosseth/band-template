@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./showList.scss";
-import { projectFirestore } from "../firebase/config";
+import { projectFirestore } from "../../firebase/config";
 import { useState } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import Create from "../pages/create/Create";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Create from "../../pages/create/Create";
 import { useEffect } from "react";
 
 export default function ShowList({ shows }) {
@@ -20,6 +20,11 @@ export default function ShowList({ shows }) {
   //     }
   //   }, 20000);
   // }, []);
+
+  ////removed Link to Info --- didnt know if it was necessary
+  // <Link className="details" to={`/show/${show.id}`}>
+  //   Info
+  //</Link>
 
   if (shows.length === 0) {
     return <div>No shows found matching that criteria</div>;
@@ -119,19 +124,17 @@ export default function ShowList({ shows }) {
                 </div>
                 <div className="cardBottom">
                   <div className="showCardDateTime">
-                    🚪: {showTime(show.time)}, {show.price}
+                    Door: {showTime(show.time)}, {show.price}
                   </div>
                 </div>
-                <div className="manage-show-details">
-                  <Link className="details" to={`/show/${show.id}`}>
-                    Info
-                  </Link>
-                </div>
+                <div className="manage-show-details"></div>
               </div>
             </div>
           </div>
         ))}
-        <button onClick={() => setAllShows(false)}>show less</button>
+        <div className="show-less">
+          <button onClick={() => setAllShows(false)}>show less</button>
+        </div>
       </div>
     );
   } else {
@@ -191,14 +194,11 @@ export default function ShowList({ shows }) {
                 </div>
                 <div className="cardBottom">
                   <div className="showCardDateTime">
-                    🚪{showTime(show.time)}: , {show.price}${" "}
+                    Door: {showTime(show.time)} | ${""}
+                    {show.price}
                   </div>
                 </div>
-                <div className="manage-show-details">
-                  <Link className="details" to={`/show/${show.id}`}>
-                    Info
-                  </Link>
-                </div>
+                <div className="manage-show-details"></div>
               </div>
             </div>
           </div>

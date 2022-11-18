@@ -1,7 +1,6 @@
 import "./topBar.css";
 import { Link } from "react-router-dom";
-import Home from "../pages/home/Home";
-import Carousel from "./carousel/Carousel";
+import Carousel from "../carousel/Carousel";
 
 export default function TopBar() {
   return (

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Create from "./pages/create/Create";
 import Show from "./pages/show/Show";
-import TopBar from "./components/TopBar";
+import TopBar from "./components/topBar/TopBar";
 import Menu from "./pages/menu/Menu";
 import Contact from "./pages/contact/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";

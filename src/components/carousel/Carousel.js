@@ -1,8 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 import "./carousel.css";
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/autoplay";
 import front from "../carousel/front.png";
 import outside from "../carousel/outside.png";
 import bar from "../carousel/bar.png";
@@ -11,8 +13,10 @@ export default function Carousel() {
     <div className="swiper-container">
       {" "}
       <Swiper
+        modules={Autoplay}
         spaceBetween={50}
         slidesPerView={1}
+        autoplay={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >

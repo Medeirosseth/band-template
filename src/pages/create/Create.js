@@ -136,11 +136,9 @@ export default function Create() {
           />
         </div>
 
-        <button type="submit">submit</button>
+        <button type="submit">Submit</button>
+        <button onClick={logout}>Logout</button>
       </form>
-      <button className="btn" onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 }

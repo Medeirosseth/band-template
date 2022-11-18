@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./home.css";
 
 //components
-import ShowList from "../../components/ShowList";
+import ShowList from "../../components/showList/ShowList";
 
 export default function Home() {
   const [data, setData] = useState(null);

@@ -41,53 +41,23 @@ export default function Contact() {
           </Link>
         </div>
         <div className="contact-right">
-          <button>Submit</button>
+          <div className="booking">Booking Inquiries</div>
+          <form ref={form} onSubmit={sendEmail}>
+            <label type="name" />
+            <input type="text" placeholder="Name" name="user_name" />
+            <label type="email" />
+            <input type="email" placeholder="Email" name="user_email" />
+            <label type="message" />
+            <textarea
+              name="message"
+              placeholder="Group name, date you are interested in "
+            />
+            <input className="input-btn" type="submit" value="Send" />
+          </form>
+          We receive hundreds of booking request and we do our best to give each
+          one the attention they deserve.
         </div>
-        <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form>
-
-        {!user && <></>}
-        {user && (
-          <>
-            {user.displayName}
-            <button className="btn" onClick={logout}>
-              Logout
-            </button>
-          </>
-        )}
       </div>
     </>
   );
-  // <form>
-  //   <div className="contact-form">
-  //     <input
-  //       className="contact-input"
-  //       type="text"
-  //       placeholder="Email"
-  //       name="email"
-  //       required
-  //     />
-  //     <input
-  //       className="contact-input"
-  //       type="text"
-  //       placeholder="Name"
-  //       name="email"
-  //       required
-  //     />
-  //     <textarea
-  //       className="contact-area"
-  //       type="text"
-  //       placeholder="Name of group... date you are interested in...
-  //         We will get back to you as soon as
-  //         we can, but please be patient."
-  //       name="email"
-  //       required
-  //     />
 }
