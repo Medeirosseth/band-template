@@ -2,6 +2,9 @@
 .show-list {
   background-color: blue;
   div {
+    #oldShows {
+      display: none;
+    }
     .show {
       display: flex;
       align-items: center;
@@ -31,6 +34,7 @@
         margin-bottom: -90px;
         color: white;
         border-radius: 10px;
+
         .deleteIconContainer {
           align-self: flex-end;
           margin-top: 10px;
@@ -128,6 +132,10 @@
     background-color: white;
     // background-image: repeating-conic-gradient(black 10%, white 20%);
     div {
+      #oldShows {
+        display: none;
+      }
+
       .show {
         background-color: inherit;
         .showCard {

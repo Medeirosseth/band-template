@@ -4,10 +4,23 @@ import { projectFirestore } from "../firebase/config";
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import Create from "../pages/create/Create";
+import { useEffect } from "react";
 
 export default function ShowList({ shows }) {
   const { user } = useAuthContext();
   const [allShows, setAllShows] = useState(false);
+  const [count, setCount] = useState(0);
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     for (let i = 0; i <= 2; i++) {
+  //       const oldShowBtn = document.getElementById("oldShows");
+  //       oldShowBtn.click();
+  //       console.log("CLICKED", i);
+  //     }
+  //   }, 20000);
+  // }, []);
+
   if (shows.length === 0) {
     return <div>No shows found matching that criteria</div>;
   }
@@ -41,7 +54,10 @@ export default function ShowList({ shows }) {
   function deleteOldShows(ourShowDate, id) {
     const currentDate = new Date();
     const prettyDate = new Date(ourShowDate + " 23:59:59.999");
-
+    console.log("ourshowdate: ", ourShowDate);
+    console.log("current date: ", currentDate);
+    console.log("prettyDate: ", prettyDate);
+    console.log(ourShowDate);
     if (prettyDate < currentDate) {
       handleDelete(id);
     } else if (prettyDate >= currentDate) {
@@ -125,14 +141,16 @@ export default function ShowList({ shows }) {
         {firstThreeShows.map((show) => (
           // <h2 key={show.id}>{show.name}</h2>
           <div key={show.id}>
+            <button
+              data-show={show.date}
+              data-id={show.id}
+              onClick={() => deleteOldShows(show.date, show.id)}
+              id="oldShows"
+            >
+              DELETE OLD SHOWS
+            </button>
             <div className="show">
               <div className="showCard">
-                <button
-                  className="daddy"
-                  onClick={deleteOldShows(show.date, show.id)}
-                >
-                  CLICK ME DADDY
-                </button>
                 {user && (
                   <div
                     className="deleteIconContainer"
