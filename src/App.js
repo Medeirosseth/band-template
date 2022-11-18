@@ -11,6 +11,7 @@ import Login from "./components/login/login";
 
 //styles
 import "./App.css";
+import Carousel from "./components/carousel/Carousel";
 
 function App() {
   // insert user in useAuthContext()
