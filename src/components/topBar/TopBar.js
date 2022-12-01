@@ -1,4 +1,4 @@
-import "./topBar.css";
+import "./topBar.scss";
 import { Link } from "react-router-dom";
 import Carousel from "../carousel/Carousel";
 
@@ -6,7 +6,6 @@ export default function TopBar() {
   return (
     <>
       <div className="topbar">
-        <div className="emptyDiv"></div>
         <nav>
           <Link className="link" to={`/`}>
             <div className="top" id="simple_arc">
@@ -25,12 +24,9 @@ export default function TopBar() {
             <i className="fa-solid fa-star"></i>
             <h2>LOUNGE</h2>
           </div>
-          <h6 className="location"> 2025 N Kilpatrick St Portland, OR 97217</h6>
-          <h6 className="hours">Current Hours noon to midnight</h6>
         </nav>
         <div className="lottery"></div>
       </div>
-      <Carousel />
     </>
   );
 }

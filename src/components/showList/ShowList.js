@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Create from "../../pages/create/Create";
 import { useEffect } from "react";
+import Preview from "../preview/preview";
 
 export default function ShowList({ shows }) {
   const { user } = useAuthContext();
@@ -29,13 +30,6 @@ export default function ShowList({ shows }) {
   if (shows.length === 0) {
     return <div>No shows found matching that criteria</div>;
   }
-
-  // function clearShows() {
-  //   console.log("ourint");
-  // }
-  // const interval = setInterval(clearShows, 3000);
-
-  // console.log("interval", interval);
 
   const sortShows = (shows) => {
     let sortedArray = shows.sort(function (a, b) {
@@ -207,6 +201,7 @@ export default function ShowList({ shows }) {
           <button onClick={() => setAllShows(true)}>See MOre</button>
         </div>
         {user && <Create />}
+        <Preview shows={shows} />
       </div>
     );
   }

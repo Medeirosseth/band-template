@@ -1,10 +1,14 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import "./carousel.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 import front from "../carousel/front.png";
 import outside from "../carousel/outside.png";
 import bar from "../carousel/bar.png";
@@ -13,23 +17,25 @@ export default function Carousel() {
     <div className="swiper-container">
       {" "}
       <Swiper
-        modules={Autoplay}
+        modules={[Navigation, Autoplay, Pagination]}
         spaceBetween={50}
         slidesPerView={1}
-        autoplay={true}
+        navigation
+        autoplay={{ delay: 5000 }}
+        pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <img style={{ width: 400 }} src={front} alt="front" />
+          <img src={front} alt="front" />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <img style={{ width: 400 }} src={bar} alt="front" />
+          <img src={bar} alt="front" />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <img style={{ width: 400 }} src={outside} alt="front" />
+          <img src={outside} alt="front" />
         </SwiperSlide>
       </Swiper>
     </div>

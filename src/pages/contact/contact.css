@@ -4,7 +4,7 @@
   margin-bottom: 50px;
   font-family: "Fredoka One", cursive;
   background-color: black;
-  color: white;
+  color: green;
 }
 
 .contact-left {
@@ -82,10 +82,12 @@ textarea {
   color: rgb(198, 63, 63);
 }
 
-@media (max-width: 400px) {
+@media (min-width: 600px) {
   .contact-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+    border: solid 5px red;
+  }
+
+  .contact-left {
+    color: green;
   }
 }

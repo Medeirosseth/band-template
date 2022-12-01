@@ -1,0 +1,55 @@
+.topbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+      // border: solid 1px red;
+      text-decoration: none;
+      color: black;
+      .top {
+        // border: solid 1px green;
+
+        h2 {
+        }
+      }
+      .middle {
+        // border: solid 1px blue;
+        // background-color: blue;
+        display: flex;
+        justify-content: center;
+        .kenton-club {
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      // border: solid 1px orange;
+      align-items: center;
+      a {
+        h2 {
+        }
+      }
+      i {
+      }
+      h2 {
+      }
+    }
+
+    .hours-of-op {
+      border: solid 1px orange;
+      width: 100%;
+
+      h6 {
+      }
+      .location {
+      }
+    }
+  }
+}

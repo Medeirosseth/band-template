@@ -5,6 +5,7 @@ import "./home.css";
 
 //components
 import ShowList from "../../components/showList/ShowList";
+import Preview from "../../components/preview/preview";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -42,6 +43,7 @@ export default function Home() {
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">loading...</p>}
       {data && <ShowList shows={data} />}
+      {data && <Preview shows={data} />}
     </div>
   );
 }

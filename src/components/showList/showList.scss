@@ -1,6 +1,8 @@
 //new style for mobile
 .show-list {
-  background-color: white;
+  background-color: #cbd2d0;
+  margin-top: 420px;
+  // border: solid 3px red;
 
   .seeMoreBtn {
     display: flex;
@@ -10,7 +12,7 @@
     button {
       background-color: black;
       color: green;
-      box-shadow: 20px 20px 10px rgb(0, 0, 0);
+      // box-shadow: 20px 20px 10px rgb(0, 0, 0); This needs to fixed
     }
   }
   .show-less {
@@ -21,7 +23,7 @@
     button {
       background-color: black;
       color: green;
-      box-shadow: 20px 20px 10px rgb(0, 0, 0);
+      // box-shadow: 20px 20px 10px rgb(0, 0, 0); This needs to be fixed
     }
   }
   div {
@@ -51,13 +53,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: -60px;
+        margin-top: 10px;
         border-bottom: solid 2px white;
         border-right: solid 2px white;
-        background-color: black;
+        background-color: #878e99;
         box-shadow: 20px 20px 10px rgb(0, 0, 0);
         margin-bottom: -90px;
-        color: white;
+        color: #add9f4;
         border-radius: 10px;
 
         .deleteIconContainer {
@@ -150,6 +152,16 @@
     }
   }
 }
+//black
+// 221E22
+//burnt orange
+// D74E09
+// roman silver
+// 878E99
+// dutch white
+// F4E4BA
+//uranian blue
+// ADD9F4
 
 //style for browser
 @media (min-width: 1400px) {

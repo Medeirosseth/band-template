@@ -12,6 +12,8 @@ import Login from "./components/login/login";
 //styles
 import "./App.css";
 import Carousel from "./components/carousel/Carousel";
+import Preview from "./components/preview/preview";
+import HoursOfOp from "./components/hoursOfOp/HoursOfOp";
 
 function App() {
   // insert user in useAuthContext()
@@ -20,7 +22,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Preview />
         <TopBar />
+        <HoursOfOp />
+        <Carousel />
         <Routes>
           <Route
             exact
