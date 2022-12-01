@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import "./carousel.css";
+import "./carousel.scss";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";

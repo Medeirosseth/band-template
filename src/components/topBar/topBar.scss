@@ -1,8 +1,16 @@
 .topbar {
+  position: fixed;
+  top: 0;
+  height: 193px;
+  width: 100%;
+  z-index: 2;
+
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
+  background-color: black;
+  color: white;
   nav {
     display: flex;
     flex-direction: column;
@@ -14,17 +22,27 @@
       text-decoration: none;
       color: black;
       .top {
+        margin-bottom: -35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         // border: solid 1px green;
 
         h2 {
+          font-family: "Rubik Distressed", cursive;
+          color: white;
         }
       }
       .middle {
+        margin-bottom: -35px;
         // border: solid 1px blue;
         // background-color: blue;
         display: flex;
         justify-content: center;
         .kenton-club {
+          font-family: "Rubik Distressed", cursive;
+          font-size: 45px;
+          color: white;
         }
       }
     }
@@ -33,12 +51,19 @@
       // border: solid 1px orange;
       align-items: center;
       a {
+        text-decoration: none;
+        color: white;
         h2 {
+          font-family: "Rubik Distressed", cursive;
         }
       }
       i {
+        color: rgb(157, 18, 46);
+        margin-left: 2px;
+        margin-righ: 2px;
       }
       h2 {
+        font-family: "Rubik Distressed", cursive;
       }
     }
 

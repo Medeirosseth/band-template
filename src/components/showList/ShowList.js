@@ -79,11 +79,13 @@ export default function ShowList({ shows }) {
           <div key={show.id}>
             <div className="show">
               <div className="showCard">
-                {!user && (
-                  <i
+                {user && (
+                  <div
+                    className="deleteIconContainer"
                     onClick={() => handleDelete(show.id)}
-                    className="fa-solid fa-xmark"
-                  ></i>
+                  >
+                    <i className="fa-solid fa-xmark"></i>
+                  </div>
                 )}
 
                 <div className="cardTop">
@@ -127,8 +129,11 @@ export default function ShowList({ shows }) {
           </div>
         ))}
         <div className="show-less">
-          <button onClick={() => setAllShows(false)}>show less</button>
+          <button className="toggleShows" onClick={() => setAllShows(false)}>
+            show less
+          </button>
         </div>
+        {user && <Create />}
       </div>
     );
   } else {
@@ -198,7 +203,9 @@ export default function ShowList({ shows }) {
           </div>
         ))}
         <div className="seeMoreBtn">
-          <button onClick={() => setAllShows(true)}>See MOre</button>
+          <button className="toggleShows" onClick={() => setAllShows(true)}>
+            See All Shows
+          </button>
         </div>
         {user && <Create />}
         <Preview shows={shows} />

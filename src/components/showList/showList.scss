@@ -1,6 +1,6 @@
 //new style for mobile
 .show-list {
-  background-color: #cbd2d0;
+  background-color: rgb(245, 254, 255);
   margin-top: 420px;
   // border: solid 3px red;
 
@@ -9,9 +9,13 @@
     justify-content: center;
     margin-top: 100px;
     // border: solid 1px red;
-    button {
-      background-color: black;
-      color: green;
+    .toggleShows {
+      margin-top: -45px;
+      margin-bottom: 20px;
+      height: 30px;
+      border-radius: 50px;
+      background-color: rgb(157, 18, 46);
+      color: white;
       // box-shadow: 20px 20px 10px rgb(0, 0, 0); This needs to fixed
     }
   }
@@ -20,10 +24,12 @@
     justify-content: center;
     margin-top: 100px;
     // border: solid 1px red;
-    button {
-      background-color: black;
-      color: green;
-      // box-shadow: 20px 20px 10px rgb(0, 0, 0); This needs to be fixed
+    .toggleShows {
+      height: 30px;
+      border-radius: 50px;
+      background-color: rgb(157, 18, 46);
+      color: white;
+      // box-shadow: 20px 20px 10px rgb(0, 0, 0); This needs to fixed
     }
   }
   div {
@@ -56,10 +62,10 @@
         margin-top: 10px;
         border-bottom: solid 2px white;
         border-right: solid 2px white;
-        background-color: #878e99;
-        box-shadow: 20px 20px 10px rgb(0, 0, 0);
+        background-color: black;
+        // box-shadow: 20px 20px 10px rgb(0, 0, 0);
         margin-bottom: -90px;
-        color: #add9f4;
+        color: rgb(157, 18, 46);
         border-radius: 10px;
 
         .deleteIconContainer {

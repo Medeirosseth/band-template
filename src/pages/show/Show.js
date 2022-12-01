@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { projectFirestore, app } from "../../firebase/config";
-import "./show.css";
+import "./show.scss";
 
 export default function Shows() {
   const [show, setShow] = useState(null);

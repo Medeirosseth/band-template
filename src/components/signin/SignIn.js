@@ -3,7 +3,7 @@ import { useSignup } from "../../hooks/useSignup";
 import { useLogout } from "../../hooks/useLogout";
 import { useLogin } from "../../hooks/useLogin";
 
-import "./signIn.css";
+import "./signIn.scss";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");

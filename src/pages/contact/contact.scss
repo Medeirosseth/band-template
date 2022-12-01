@@ -1,0 +1,70 @@
+.contact-container {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: "Fredoka One", cursive;
+  background-color: black;
+  color: green;
+
+  .contact-left {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+    .mbr {
+      margin-top: -20px;
+    }
+    .fa-bolt {
+      color: rgb(198, 63, 63);
+    }
+  }
+
+  .contact-right {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 12px;
+
+    .booking {
+      color: white;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: larger;
+    }
+
+    .input-btn {
+      color: black;
+      background-color: white;
+      border-radius: 10px;
+      border: 1px white solid;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    input,
+    textarea {
+      margin-top: 5px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .contact-container {
+    border: solid 5px red;
+  }
+
+  .contact-left {
+    color: green;
+  }
+}

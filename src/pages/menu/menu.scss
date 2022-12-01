@@ -1,0 +1,24 @@
+.container {
+  background-color: rgb(245, 254, 255);
+  .menu-wrapper {
+    .menu-item {
+      margin-top: 0px;
+      font-family: "Noto Serif Telugu", serif;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        margin-top: 20px;
+      }
+
+      /* border: 40px solid black; */
+      .disclaimer {
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+  }
+}

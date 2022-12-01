@@ -1,0 +1,16 @@
+.hours-of-op {
+  // background-color: #878e99;
+  margin-top: 193px;
+  background-color: rgb(157, 18, 46);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .location {
+    margin: 0 !important;
+    color: white;
+  }
+  .hours {
+    margin: 0 !important;
+    color: white;
+  }
+}

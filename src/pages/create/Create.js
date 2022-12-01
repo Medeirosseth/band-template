@@ -63,7 +63,16 @@ export default function Create() {
 
   return (
     <div className="create">
+      <div className="formTitle">Post New Show</div>
       <form id="newShow-form" className="newShowForm" onSubmit={handleSubmit}>
+        <div className="photoLabel">
+          <input
+            placeholder="photo"
+            type="file"
+            onChange={onFileChange}
+            required
+          />
+        </div>
         <div className="bandNameLabel">
           <input
             type="text"
@@ -124,14 +133,6 @@ export default function Create() {
             type="text"
             onChange={(e) => setPrice(e.target.value)}
             value={price}
-            required
-          />
-        </div>
-        <div className="photoLabel">
-          <input
-            placeholder="photo"
-            type="file"
-            onChange={onFileChange}
             required
           />
         </div>
